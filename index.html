@@ -214,7 +214,11 @@
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 0%, black 78%, transparent 100%);
   }
-  .hero-leaf img { height: 100%; width: auto; }
+  .hero-leaf img {
+    height: 100%; width: auto;
+    /* Reduces visibility of PNGTree watermarks on cream bg */
+    mix-blend-mode: multiply;
+  }
 
   /* Hairline horizon */
   .hero-shelf {
@@ -1094,10 +1098,13 @@
     .products { grid-template-columns: repeat(3, 1fr); gap: 16px 12px; }
   }
   @media (max-width: 720px) {
-    .products { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 420px) {
-    .products { grid-template-columns: 1fr; }
+    .products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .product-name { font-size: 13px; }
+    .product-price { font-size: 13px; }
+    .product-meta { font-size: 11px; }
+    .product-img-wrap { border-radius: 12px; margin-bottom: 10px; }
+    .product-add { width: 30px; height: 30px; bottom: 8px; right: 8px; }
+    .product-tag { padding: 3px 7px; font-size: 8px; }
   }
   @media (max-width: 1000px) {
     .about { padding: 80px 20px; }
