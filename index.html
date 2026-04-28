@@ -216,8 +216,9 @@
   }
   .hero-leaf img {
     height: 100%; width: auto;
-    /* Reduces visibility of PNGTree watermarks on cream bg */
-    mix-blend-mode: multiply;
+    /* darken keeps green pixels, drops light watermarks into cream bg */
+    mix-blend-mode: darken;
+    filter: contrast(1.08) saturate(1.15);
   }
 
   /* Hairline horizon */
@@ -1086,7 +1087,8 @@
     .nav-pill { display: none; }
     .lang-pill { display: none; }
     .wordmark { font-size: clamp(72px, 22vw, 140px); }
-    .hero-leaf { height: 44vh; bottom: 1px; }
+    .hero-leaf { height: 62vh; bottom: 1px; }
+    .wordmark { top: 38%; }
     .cta-card { left: 12px; right: 12px; max-width: none; bottom: 40px; }
     .caption { display: none; }
     .hero-shelf { left: 16px; right: 16px; }
